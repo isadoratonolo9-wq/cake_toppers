@@ -914,7 +914,7 @@ section {
 }
 
 .value-row-strike {
-  text-decoration: line-through;
+  text-decoration: line-through !important;
 }
 
 .value-table-total {
@@ -1123,7 +1123,7 @@ section {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.2s ease;
+  transition: max-height 0.3s cubic-bezier(0, .1, 0, 1), padding 0.2s ease;
   padding: 0 1.35rem;
   background-color: rgba(252, 249, 247, 0.5);
   color: #4A4340;
@@ -1153,7 +1153,7 @@ section {
 
 .faq-item.active .faq-answer {
   max-height: 250px;
-  transition: max-height 0.4s cubic-bezier(1, 0, 1, 0), padding 0.2s ease;
+  transition: max-height 0.4s cubic-bezier(.1, 0, .1, 0), padding 0.2s ease;
 }
 
 /* Bottom Urgency Cards (Sleek Contrast Block) */
