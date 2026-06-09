@@ -1,4 +1,4 @@
-/* ==========================================================================
+"""/* ==========================================================================
    Ultra-Premium & Dynamic Stylesheet: Cake Toppers Sales Page (Antigravity Touch)
    ========================================================================== */
 
@@ -1310,7 +1310,7 @@ section {
    Novos elementos adicionados
    ========================================================================== */
 
-/* Badge de segmentaÃ§Ã£o */
+/* Badge de segmentação */
 .segmentation-badge {
   background: rgba(36, 194, 120, 0.08) !important;
   color: #19A461 !important;
@@ -1318,7 +1318,7 @@ section {
   font-size: 0.75rem !important;
 }
 
-/* BotÃ£o "Mira el video abajo" */
+/* Botão "Mira el video abajo" */
 .watch-video-cta {
   display: flex;
   justify-content: center;
@@ -1329,7 +1329,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, #FF1E6C 0%, #E01058 100%);
+  background: linear-gradient(135deg, #24C278 0%, #19A461 100%);
   color: #FFFFFF;
   font-family: var(--font-heading);
   font-size: 1rem;
@@ -1337,14 +1337,14 @@ section {
   padding: 0.9rem 1.75rem;
   border-radius: 9999px;
   text-decoration: none;
-  box-shadow: 0 8px 24px rgba(255, 30, 108, 0.3);
+  box-shadow: 0 8px 24px rgba(36, 194, 120, 0.3);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   letter-spacing: 0.02em;
 }
 
 .btn-watch-video:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(255, 30, 108, 0.45);
+  box-shadow: 0 12px 30px rgba(36, 194, 120, 0.45);
 }
 
 .btn-watch-video .fa-chevron-down {
@@ -1356,7 +1356,7 @@ section {
   50% { transform: translateY(4px); }
 }
 
-/* Contador de visualizaÃ§Ãµes ao vivo */
+/* Contador de visualizações ao vivo */
 .live-viewers {
   display: flex;
   align-items: center;
@@ -1390,7 +1390,7 @@ section {
   50% { transform: scale(1.15); opacity: 0.85; box-shadow: 0 0 0 5px rgba(255,59,59,0); }
 }
 
-/* SeÃ§Ã£o de bÃ´nus */
+/* Seção de bônus */
 .section-bonuses {
   background: #FFF9F5;
   border-top: 1px solid rgba(243, 101, 35, 0.08);
@@ -1496,3 +1496,4 @@ section {
   color: var(--success);
   font-weight: 900;
 }
+""
