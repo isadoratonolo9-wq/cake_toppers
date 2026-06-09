@@ -47,7 +47,11 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  background-color: #121113; /* Elegant deep dark outside container wrapper */
+  background-color: #fff0f5; /* Festive cake-topper fixed background theme */
+  background-image: 
+    radial-gradient(circle at 25px 25px, rgba(255, 30, 108, 0.05) 2%, transparent 0%), 
+    radial-gradient(circle at 75px 75px, rgba(243, 101, 35, 0.05) 2%, transparent 0%);
+  background-size: 100px 100px;
 }
 
 body {
@@ -113,7 +117,7 @@ body {
 
 /* Main Content Wrapper */
 .main-content {
-  padding: 2.25rem 1.25rem;
+  padding: 0;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -364,7 +368,9 @@ body {
 /* Sections Global Headers */
 section {
   width: 100%;
-  margin-bottom: 3.5rem;
+  margin-bottom: 0;
+  padding: 2.5rem 1.25rem;
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -387,81 +393,279 @@ section {
   letter-spacing: 0.02em;
 }
 
-/* YES / NO Cards - Glassmorphism styled */
-.card {
-  background: var(--card-bg);
-  border: var(--border-glass);
-  border-radius: var(--radius);
-  padding: 2.25rem 1.5rem 1.75rem 1.5rem;
-  margin-bottom: 2.5rem;
-  position: relative;
-  box-shadow: var(--shadow-card);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+/* Alternate and themed section backgrounds */
+.section-hero {
+  padding: 2.25rem 1.25rem 1.5rem 1.25rem;
+  background: transparent;
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+.section-gallery {
+  background: #FFF5F7;
+  border-top: 1px solid rgba(255, 30, 108, 0.08);
+  border-bottom: 1px solid rgba(255, 30, 108, 0.08);
 }
 
-.card-badge {
-  position: absolute;
-  top: -22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 44px;
-  height: 44px;
+.section-benefits {
+  background: #FFFFFF;
+}
+
+.section-steps {
+  background: #FFF9F5;
+  border-top: 1px solid rgba(243, 101, 35, 0.08);
+  border-bottom: 1px solid rgba(243, 101, 35, 0.08);
+}
+
+.section-receive {
+  background: #FFFFFF;
+}
+
+.section-feedback {
+  background: #FFF5F7;
+  border-top: 1px solid rgba(255, 30, 108, 0.06);
+  border-bottom: 1px solid rgba(255, 30, 108, 0.06);
+}
+
+.section-pricing {
+  background: #FFFFFF;
+}
+
+.section-guarantee {
+  background: #F4FAF7;
+  border-top: 1px solid rgba(36, 194, 120, 0.08);
+  border-bottom: 1px solid rgba(36, 194, 120, 0.08);
+}
+
+.section-faq {
+  background: #FFFFFF;
+}
+
+/* Shared Card Lists (.benefits-list & .receive-list) */
+.benefits-list, .receive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.benefit-item, .receive-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(30, 27, 26, 0.08);
+  border-radius: 100px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 15px rgba(30, 27, 26, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .benefit-item, .receive-item {
+    border-radius: 20px;
+    padding: 0.85rem 1.15rem;
+  }
+}
+
+.benefit-item:hover, .receive-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(30, 27, 26, 0.06);
+}
+
+.benefit-icon, .receive-icon {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  background: var(--primary);
+  color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.6rem;
-  box-shadow: 0 6px 15px rgba(30, 27, 26, 0.06);
-}
-
-.card-yes {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(232, 249, 241, 0.95) 100%);
-}
-
-.card-no {
-  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255, 235, 235, 0.95) 100%);
-}
-
-.card-title {
-  font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 900;
-  text-align: center;
-  margin-bottom: 1.35rem;
-  color: #1A1716;
-}
-
-.list-benefits {
-  list-style: none;
-}
-
-.list-benefits li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2D2725;
-}
-
-.list-benefits li i {
-  margin-right: 0.75rem;
-  margin-top: 0.2rem;
-  font-size: 1.15rem;
   flex-shrink: 0;
 }
 
-.check-yes {
-  color: var(--success);
+.benefit-icon svg, .receive-icon svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 3.5px;
 }
 
-.mark-no {
-  color: var(--danger);
+.benefit-text, .receive-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #3D3532;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.receive-text strong {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.receive-subtext {
+  font-weight: 500;
+  color: #7A726E;
+  font-size: 0.88rem;
+  margin-left: 0.25rem;
+}
+
+/* Expandable Receive Checklist Item (e.g. Infantiles with child images) */
+.receive-item-expandable {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  border-radius: 24px !important;
+  padding: 1.25rem 1.5rem !important;
+  gap: 0.85rem !important;
+}
+
+.receive-item-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.receive-item-details {
+  width: 100%;
+  padding-left: 2.75rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .receive-item-details {
+    padding-left: 0;
+  }
+}
+
+.details-label {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.details-gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.detail-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease;
+}
+
+.detail-thumb:hover {
+  transform: scale(1.08);
+}
+
+.old-price-inline {
+  text-decoration: line-through;
+  opacity: 0.6;
+  font-weight: normal;
+  margin-right: 0.35rem;
+}
+
+/* ROI Calculator Card */
+.roi-card-wrapper {
+  padding: 0 1.25rem 2.5rem 1.25rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.roi-card {
+  background: linear-gradient(135deg, #FF1E6C 0%, #E01058 100%);
+  border-radius: 24px;
+  padding: 2.25rem 1.75rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(255, 30, 108, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.roi-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -20%;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.roi-label {
+  margin: 0 0 1rem 0;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.75);
+  text-transform: uppercase;
+}
+
+.roi-headline {
+  margin: 0 0 1.25rem 0;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.roi-price-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 900;
+  padding: 0.1rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  vertical-align: baseline;
+}
+
+.roi-body {
+  margin: 0 0 0.4rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.roi-amount {
+  margin: 0.35rem 0 0.5rem 0;
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.roi-footer {
+  margin: 1.25rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.roi-footer strong {
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 1.1rem;
 }
 
 /* Gallery Previews (White Frames & Smooth Scale Effect) */
@@ -489,10 +693,14 @@ section {
   background: var(--card-bg);
   border: var(--border-glass);
   border-radius: var(--radius);
-  padding: 1.75rem;
+  padding: 2.25rem 1.75rem;
   margin-bottom: 1.5rem;
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .step-card:hover {
@@ -501,99 +709,125 @@ section {
 }
 
 .step-num {
-  width: 36px;
-  height: 36px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  width: 54px;
+  height: 54px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: #FFFFFF;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 800;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  margin-bottom: 1.25rem;
   font-family: var(--font-heading);
-  box-shadow: 0 4px 12px rgba(255, 30, 108, 0.25);
+  box-shadow: 0 4px 14px rgba(255, 30, 108, 0.25);
 }
 
 .step-title {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 800;
   margin-bottom: 0.6rem;
   color: #1A1716;
 }
 
 .step-desc {
-  font-size: 0.92rem;
-  color: #4A4340;
+  font-size: 0.95rem;
+  color: #5C5653;
   font-weight: 500;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
-/* Bonuses Container (Dashed Decorative Gold-Amber Pattern) */
-.section-bonuses {
-  background: radial-gradient(circle at 90% 10%, rgba(243, 101, 35, 0.04) 0%, rgba(255, 30, 108, 0.03) 100%);
-  padding: 2.25rem 1.25rem;
-  border-radius: var(--radius);
-  border: 2px dashed rgba(243, 101, 35, 0.35);
+/* Section: Lo que recibes hoy */
+.receive-checklist-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(30, 27, 26, 0.06);
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(30, 27, 26, 0.03);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.receive-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.receive-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  text-align: left;
+}
+
+.receive-checklist .chk-icon {
+  color: var(--success);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.receive-checklist .chk-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3D3532;
+  line-height: 1.4;
+}
+
+.receive-checklist .chk-subtext {
+  font-weight: 500;
+  color: #7A726E;
+  font-size: 0.88rem;
+  display: inline-block;
+  margin-left: 0.25rem;
+}
+
+/* Section: Lo que dicen nuestras clientas */
+.section-feedback {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.feedback-scroll {
+  width: calc(100% + 2.5rem);
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  width: calc(100% + 2.5rem);
+  overflow-x: auto;
+  padding: 0.5rem 1.25rem 1.5rem 1.25rem;
+  display: flex;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 
-.bonus-card {
-  background: var(--card-bg);
-  border: var(--border-glass);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow-card);
-  position: relative;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+.feedback-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari/Opera */
 }
 
-.bonus-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
+.feedback-track {
+  display: flex;
+  gap: 1rem;
 }
 
-.bonus-tag {
-  position: absolute;
-  top: -14px;
-  right: 18px;
-  background: linear-gradient(135deg, var(--secondary) 0%, #D75218 100%);
-  color: #FFFFFF;
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.4rem 1rem;
-  border-radius: 8px;
-  letter-spacing: 0.06em;
-  box-shadow: 0 4px 12px rgba(243, 101, 35, 0.3);
-  font-family: var(--font-heading);
-}
-
-.bonus-image {
-  width: 100%;
+.feedback-img {
+  width: 280px;
   height: auto;
-  border-radius: var(--radius-sm);
-  margin-bottom: 1.25rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(30, 27, 26, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-.bonus-title {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin-bottom: 0.6rem;
-  color: #1A1716;
-}
-
-.bonus-desc {
-  font-size: 0.92rem;
-  color: #4A4340;
-  font-weight: 500;
-  line-height: 1.55;
+.feedback-img:hover {
+  transform: scale(1.02);
 }
 
 /* Pricing Card Section (Shiny Gold Glow & Soft Gradient Fill) */
@@ -632,6 +866,96 @@ section {
   color: #1A1716;
 }
 
+/* Value Breakdown Table in Pricing Card */
+.value-table {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(30, 27, 26, 0.07);
+  margin-bottom: 1.25rem;
+  background: #FAFAFA;
+}
+
+.value-table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: #F0EDEB;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.value-table-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(30, 27, 26, 0.05);
+  font-size: 0.88rem;
+  color: #4A4340;
+  font-weight: 500;
+}
+
+.value-table-row span:last-child {
+  font-weight: 700;
+  color: #2D2725;
+  white-space: nowrap;
+  margin-left: 0.5rem;
+}
+
+.value-table-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-top: 2px solid rgba(30, 27, 26, 0.1);
+  background: #F5F2F0;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #2D2725;
+}
+
+.value-total-strike {
+  text-decoration: line-through;
+  color: var(--text-muted) !important;
+  font-weight: 600 !important;
+}
+
+.value-table-final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border-top: 1px solid rgba(255, 30, 108, 0.15);
+  background: linear-gradient(135deg, rgba(255, 30, 108, 0.04) 0%, rgba(255, 30, 108, 0.08) 100%);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1A1716;
+}
+
+.value-final-price {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--primary) !important;
+  letter-spacing: -0.02em;
+}
+
+.discount-note {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #E01058;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  background: rgba(255, 30, 108, 0.06);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 30, 108, 0.12);
+}
+
 .price-container {
   display: flex;
   justify-content: center;
@@ -661,6 +985,37 @@ section {
   color: #1A1716;
   margin-bottom: 1.75rem;
   letter-spacing: 0.02em;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0 0.5rem;
+  margin: 0 auto 2rem auto;
+  max-width: 290px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-align: left;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #4A4340;
+  font-weight: 600;
+}
+
+.pricing-features li i {
+  color: var(--success);
+  font-size: 1rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
 }
 
 .btn-pricing {
@@ -792,13 +1147,11 @@ section {
 
 /* Bottom Urgency Cards (Sleek Contrast Block) */
 .bottom-urgency {
-  background: linear-gradient(135deg, #FFF 0%, #FFF5F2 100%);
-  border: 2px solid rgba(243, 101, 35, 0.25);
-  border-radius: var(--radius);
-  padding: 2.25rem 1.5rem;
+  background: linear-gradient(180deg, #FFF9F6 0%, #FFEFEA 100%);
+  border-top: 1px solid rgba(243, 101, 35, 0.15);
+  padding: 3rem 1.25rem;
   text-align: center;
-  box-shadow: var(--shadow-float);
-  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .urgency-text {
@@ -839,26 +1192,27 @@ section {
 .social-toast {
   position: fixed;
   top: 16px;
+  right: 16px;
+  left: auto;
   bottom: auto;
-  left: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(239, 234, 230, 0.8);
   padding: 0.85rem 1.25rem;
   z-index: 1000;
   transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.2), opacity 0.3s ease;
-  transform: translateY(-150%) scale(0.9);
+  transform: translateX(150%) scale(0.9);
   opacity: 0;
-  max-width: 380px;
-  margin: 0 auto;
+  width: auto;
+  min-width: 280px;
+  margin: 0;
 }
 
 .social-toast.show {
-  transform: translateY(0) scale(1);
+  transform: translateX(0) scale(1);
   opacity: 1;
 }
 
@@ -932,146 +1286,10 @@ section {
   }
 }
 
-/* ==========================================================================
-   Interactive Balloons & Celebration System (Antigravity Touch)
-   ========================================================================== */
 
-/* Containers */
-.balloon-container-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 5; /* Behind the centered mobile container which has z-index: 10 */
-  overflow: hidden;
-}
-
-.balloon-container-inner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1; /* Floating behind all content and cards */
-  overflow: hidden;
-}
-
-@media (min-width: 501px) {
-  .balloon-container-inner {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 480px;
-  }
-}
-
-/* Ensure main content sits above inner balloons */
-.main-content {
-  position: relative;
-  z-index: 10; /* Strictly above the balloons */
-}
-
-/* Base Balloon styling */
-.balloon {
-  position: absolute;
-  width: 50px;
-  height: 62px;
-  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  cursor: pointer;
-  pointer-events: auto;
-  user-select: none;
-  transform-origin: bottom center;
-  transition: transform 0.15s ease-out;
-  box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.08);
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.15) 40%, rgba(0, 0, 0, 0.05) 70%), 
-              linear-gradient(135deg, var(--balloon-color-start) 0%, var(--balloon-color-end) 100%);
-}
-
-/* Glassy Highlight on Balloon */
-.balloon::after {
-  content: '';
-  position: absolute;
-  top: 8%;
-  left: 15%;
-  width: 25%;
-  height: 30%;
-  background: rgba(255, 255, 255, 0.55);
-  border-radius: 50%;
-  transform: rotate(-20deg);
-  pointer-events: none;
-}
-
-/* Balloon Knot at the Bottom */
-.balloon-knot {
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 6px solid var(--knot-color, #ff1e6c);
-  pointer-events: none;
-}
-
-/* Balloon String */
-.balloon-string-svg {
-  position: absolute;
-  bottom: -36px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px;
-  height: 36px;
-  pointer-events: none;
-}
-
-/* Pop Animation */
-.balloon.popped {
-  animation: balloon-pop 0.15s forwards ease-out;
-  pointer-events: none;
-}
-
-@keyframes balloon-pop {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(0); opacity: 0; }
-}
-
-/* Confetti System */
-.confetti-particle {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1500;
-  border-radius: 50%;
-}
-
-.confetti-particle.square {
-  border-radius: 0;
-}
-
-/* Base Cake element styling */
-.cake-element {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  pointer-events: auto;
-  user-select: none;
-  transform-origin: bottom center;
-  transition: transform 0.15s ease-out;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.1));
-}
-
-.cake-element.popped {
-  animation: balloon-pop 0.15s forwards ease-out;
-  pointer-events: none;
-}
 
 /* Glassmorphism enhancement for cards so floating balloons look premium behind them */
-.card, .step-card, .bonus-card, .pricing-card, .guarantee-box, .faq-item {
+.step-card, .receive-checklist-card, .pricing-card, .guarantee-box, .faq-item {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   background: rgba(255, 255, 255, 0.82) !important;
