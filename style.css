@@ -847,6 +847,7 @@ section {
   box-shadow: var(--shadow-float);
   position: relative;
   overflow: hidden;
+  margin-top: 2rem;
 }
 
 .pricing-badge {
@@ -911,6 +912,7 @@ section {
   color: #2D2725;
   white-space: nowrap;
   margin-left: 0.5rem;
+  text-decoration: line-through;
 }
 
 .value-row-strike {
